@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShoeBrand - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background: #222;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a.logo {
+      font-weight: bold;
+      color: orangered;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 60px 30px;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .hero-img {
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .rotate-box {
+      position: relative;
+      width: 600px;
+      aspect-ratio: 3 / 1;
+      animation: rotateYInfinite 6s linear infinite;
+      transform-style: preserve-3d;
+    }
+
+    .rotate-box .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      backface-visibility: hidden;
+      border-radius: 10px;
+    }
+
+    .rotate-box .front {
+      transform: rotateY(0deg);
+    }
+
+    .rotate-box .back {
+      transform: rotateY(180deg);
+    }
+
+    @keyframes rotateYInfinite {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .hero-text {
+      max-width: 400px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: orangered;
+    }
+
+    .btn {
+      background: orangered;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+
+    .features,
+    .design,
+    .gallery,
+    .steps {
+      padding: 60px 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .features h2,
+    .design h2,
+    .gallery h2,
+    .steps h2 {
+      text-align: center;
+      color: orangered;
+      margin-bottom: 30px;
+    }
+
+    .features ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .features ul li {
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: black;
+      font-weight: bold;
+    }
+
+    .features ul li:nth-child(1) {
+      background-color: #ffe4cc; /* light orange */
+    }
+
+    .features ul li:nth-child(2) {
+      background-color: #d4fddc; /* light green */
+    }
+
+    .features ul li:nth-child(3) {
+      background-color: #dcdcff; /* light blue */
+    }
+
+    .design-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .design-content img {
+      width: 350px;
+      border-radius: 10px;
+      max-width: 100%;
+    }
+
+    .gallery-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-images img {
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .steps .step {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .steps .step img {
+      width: 300px;
+      border-radius: 10px;
+      max-width: 100%;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+
+      .rotate-box {
+        width: 90%;
+        aspect-ratio: 1.5 / 1;
+      }
+
+      .design-content,
+      .steps .step {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .features ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .features ul li {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">ShoeBrand</a>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="launch.html">Launch Event</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-img">
+        <div class="rotate-box">
+          <img class="face front" src="images/hero_shoe.png" alt="Shoe Front" />
+          <img class="face back" src="images/hero_shoe.png" alt="Shoe Back" />
+        </div>
+      </div>
+      <div class="hero-text">
+        <h1>Discover the Future of Footwear</h1>
+        <p>Step into comfort and style with our newest shoe collection.</p>
+        <button class="btn">Shop Now</button>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <h2>Why Choose Our Shoes?</h2>
+      <ul>
+        <li>Lightweight and Durable</li>
+        <li>Eco-Friendly Materials</li>
+        <li>Customizable Fit</li>
+      </ul>
+    </section>
+
+    <!-- Behind the Design -->
+    <section class="design">
+      <h2>Behind the Design</h2>
+      <div class="design-content">
+        <img src="images/manufacturing.jpg" alt="Design Process" style="width:1000px;" />
+        <div>
+          <p>Every pair of our shoes starts with an idea — a design that blends comfort, performance, and personality. From sketch to sample, our team of designers ensures every stitch counts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-images">
+        <img src="images/shoe_image.png" alt="Shoe 1" />
+        <img src="images/shoe_image2.png" alt="Shoe 2" />
+        <img src="images/shoe_image3.png" alt="Shoe 3" />
+        <img src="images/shoe_image4.png" alt="Shoe 4" />
+        <img src="images/shoe_image5.png" alt="Shoe 5" />
+      </div>
+    </section>
+
+    <!-- How It's Made -->
+    <section class="steps">
+      <h2>How It's Made</h2>
+
+      <div class="step">
+        <img src="images/step1.jpg" alt="Step 1" />
+        <div>
+          <h3>Step 1: Concept & Sketch</h3>
+          <p>Creative ideas turn into technical sketches built for form and function.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <img src="images/step2.jpg" alt="Step 2" />
+        <div>
+          <h3>Step 2: Materials & Molding</h3>
+          <p>We handpick materials and develop molds to achieve the perfect fit and durability.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <img src="images/step3.jpg" alt="Step 3" />
+        <div>
+          <h3>Step 3: Final Assembly</h3>
+          <p>All parts come together for final stitching, gluing, and testing before hitting the shelf.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 ShoeBrand. All rights reserved.
+  </footer>
+
+</body>
+</html>

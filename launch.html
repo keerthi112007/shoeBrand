@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShoeBrand - Launch Event</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">ShoeBrand</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="launch.html" class="active">Launch Event</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="store.html">Store Locator</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Launch Party Countdown</h1>
+    <div id="countdown" style="font-size: 2rem; margin-bottom: 2rem;"></div>
+
+    <p>Join us for the exclusive launch party on October 31, 2025!</p>
+  </main>
+
+  <footer>
+    &copy; 2025 ShoeBrand. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const countdownElement = document.getElementById('countdown');
+    const launchDate = new Date('October 31, 2025 20:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = 'The launch event has started!';
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
